@@ -117,6 +117,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# Colorized man pages
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+
+# GRC-colorized commands
+
 GRC="$(which grc)"
 if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias colourify="$GRC -es --colour=auto"
@@ -157,6 +171,15 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias semanage='colourify semanage'
     alias getsebool='colourify getsebool'
     alias ifconfig='colourify ifconfig'
+    alias sysctl='colourify sysctl'
+    alias iptables='sudo grc -es iptables'
+    alias nmap='colourify nmap'
+    alias ss='colourify ss'
+    alias stat='colourify stat'
+    alias tcpdump='colourify tcpdump'
+    alias uptime='colourify uptime'
+    alias vmstat='colourify vmstat'
+    alias whois='colourify whois'
 fi
 
 alias ls='lsd'
