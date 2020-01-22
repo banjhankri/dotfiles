@@ -184,6 +184,7 @@ fi
 
 alias ls='lsd'
 
+eval `dircolors ~/.dircolors`
 
 SSH_ENV="$HOME/.ssh/environment"
 
